@@ -1,0 +1,323 @@
+/* Importando a fonte Love House */
+@font-face {
+    font-family: 'LoveHouse';
+    src: url('font/LoveHouse.otf') format('opentype'); /* Ajuste o caminho e o nome do arquivo */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Worker';
+    src: url('font/Worker.otf') format('opentype'); /* Ajuste o caminho e o nome do arquivo */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'light';
+    src: url('font/light.otf') format('opentype'); /* Ajuste o caminho e o nome do arquivo */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #d62327, #2596be); /* Gradiente de vermelho escuro para azul */
+    color: #fff; /* Texto branco para contrastar */
+    margin: 0;
+    padding: 0;
+    transition: background 0.5s ease; /* Transição suave para mudança de cor */
+}
+
+.container {
+    padding: 40px 20px; /* Mais espaçamento */
+}
+
+.password-screen {
+    font-family: 'LoveHouse', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: fixed;  /* Fixa a tela de senha */
+    top: 0;
+    left: 0;
+    width: 100%;  /* Garantir que ocupe toda a largura */
+    background: linear-gradient(to bottom, #8B0000, #00BFFF);
+    z-index: 100;  /* Garante que a tela de senha fique acima de outros elementos */
+}
+
+.password-screen h1{
+    font-size: 60px;
+    text-align: center;
+}
+
+/* Restante do código continua igual */
+
+
+/* Container dos corações */
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite clicar através dos corações */
+}
+
+/* Estilo dos corações */
+.heart {
+    position: absolute;
+    bottom: -10%; /* Começa abaixo da tela */
+    font-size: 2rem; /* Tamanho do coração */
+    color: #ff69b4; /* Cor rosa */
+    animation: float 5s infinite ease-in; /* Animação de subida */
+}
+
+/* Animação de subida */
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) scale(1); /* Começa no lugar */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) translateX(20vw) scale(1.5); /* Sobe e se move lateralmente */
+        opacity: 0;
+    }
+}
+
+/* Posicionamento e timing aleatório para cada coração */
+.heart:nth-child(1) {
+    left: 10%;
+    animation-duration: 6s;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 25%;
+    animation-duration: 8s;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 50%;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(4) {
+    left: 70%;
+    animation-duration: 9s;
+    animation-delay: 3s;
+}
+
+.heart:nth-child(5) {
+    left: 85%;
+    animation-duration: 6.5s;
+    animation-delay: 1.5s;
+}
+
+.heart:nth-child(6) {
+    left: 35%;
+    animation-duration: 7.5s;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(7) {
+    left: 30%;
+    animation-duration: 8s;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(8) {
+    left: 50%;
+    animation-duration: 6.7s;
+    animation-delay: 1.6s;
+}
+
+.heart:nth-child(9) {
+    left: 20%;
+    animation-duration: 5.6s;
+    animation-delay: 1.5s;
+}
+
+.heart:nth-child(10) {
+    left: 90%;
+    animation-duration: 7s;
+    animation-delay: 2.5s;
+}
+
+.container-content{
+    height: 60vh; /* 100% da altura da janela de visualização */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.container-content h1{
+    margin-top: 400px;
+    font-size: 80px;
+    font-family: 'Worker', Arial, sans-serif;
+}
+
+.timer{
+    margin-top: -50px;
+    word-spacing: -0.25em;
+    font-family: 'light';
+    font-size: 30px
+}
+
+.password-screen input {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 200px;
+    text-align: center;
+}
+.password-screen input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Placeholder mais claro */
+}
+.password-screen button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #8B0000; /* Vermelho escuro */
+    cursor: pointer;
+}
+.password-screen .dica {
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.content {
+    display: none;
+}
+.texto-personalizado {
+    margin: 30px 0; /* Espaçamento maior para textos */
+    font-size: 18px;
+    line-height: 1.6; /* Melhora a legibilidade */
+    border: 2px solid #ffffff4f;
+    backdrop-filter: blur(25px);
+}
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 25vh;
+}
+
+.foto-container {
+    position: relative;
+    overflow: hidden; /* Garante que a foto não ultrapasse o contêiner */
+    border-radius: 10px;
+    border: 2px solid #fff;
+    transition: all 0.8s ease; /* Transição suave para todas as propriedades */
+    width: calc(25% - 15px);
+     /* Largura máxima inicial do contêiner */
+    max-height: 200px; /* Altura máxima inicial do contêiner */
+}
+
+.photos img {
+    width: 100%; /* A imagem ocupa 100% do contêiner */
+    height: auto; /* Mantém a proporção da foto */
+    display: block;
+    transition: all 0.8s ease; /* Transição suave para todas as propriedades */
+}
+
+.legenda {
+    position: absolute;
+    bottom: -100%; /* Inicialmente escondida */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para a legenda */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    transition: bottom 0.5s ease; /* Transição suave para a legenda */
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
+}
+
+/* Efeito ao passar o mouse */
+.foto-container:hover {
+    max-width: 500px; /* Aumenta a largura máxima do contêiner */
+    max-height: 500px; /* Aumenta a altura máxima do contêiner */
+    z-index: 10; /* Garante que a foto destacada fique acima das outras */
+}
+
+.foto-container:hover img {
+    width: 100%; /* Mantém a imagem ocupando 100% do contêiner */
+    height: auto; /* Mantém a proporção da foto */
+}
+
+.foto-container:hover .legenda {
+    bottom: 0; /* Mostra a legenda */
+}
+video {
+    margin-top: 30px; /* Mais espaçamento */
+    align-self: center;
+    width: 80%;
+    max-width: 1100px;
+    border-radius: 27px;
+    margin: 25vh;
+    border:2px solid #ffffff;
+}
+audio {
+    display: none; /* Esconde o player de áudio */
+}
+.texto-personalizado {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0cap;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mensagem {
+    max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: relative;
+    font-size: 14px;
+}
+
+.mensagem.enviada {
+    background-color: #005c4b; /* Verde escuro do WhatsApp (mensagens enviadas) */
+    margin-left: auto; /* Alinha à direita */
+    color: #fff;
+    align-self: flex-end;
+}
+
+.mensagem.recebida {
+    background-color: #202c33; /* Cinza escuro do WhatsApp (mensagens recebidas) */
+    margin-right: auto; /* Alinha à esquerda */
+    color: #fff;
+    align-self: flex-start;
+}
+
+.hora {
+    display: block;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: right;
+    margin-top: 3px;
+}
+
